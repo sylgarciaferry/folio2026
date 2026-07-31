@@ -311,9 +311,16 @@
   .menu-item.meta-item .m-title{font-size:clamp(15px,1.6vw,19px);font-weight:550;color:var(--grey)}
   .menu-item.meta-item.sel .m-title{color:var(--reef)}
   .menu-gap{height:clamp(14px,2.6vh,28px);border-bottom:none}
-  @media (max-height:720px){
-    .menu-item{padding:clamp(6px,1vh,12px) 0}
-    .menu-gap{height:clamp(8px,1.6vh,18px)}
+  @media (max-height:820px){
+    .menu-item{padding:clamp(6px,1.1vh,13px) 0}
+    .menu-gap{height:clamp(8px,1.8vh,20px)}
+    .menu-item .m-title{font-size:clamp(17px,1.9vw,23px)}
+  }
+  @media (max-height:680px){
+    .menu-item{padding:clamp(4px,.8vh,9px) 0}
+    .menu-gap{height:8px}
+    .menu-intro{margin-bottom:10px}
+    .menu-item .m-title{font-size:clamp(16px,1.7vw,20px)}
   }
   @media (max-height:560px){.menu-intro{margin-bottom:8px}}
 
@@ -500,6 +507,28 @@
   @media (prefers-reduced-motion:reduce){
     *{transition:none !important;animation:none !important}
     .menu-item.pre{opacity:1;transform:none}
+  }
+
+  /* ---------- scrollbars ----------
+     The menu column and case screen scroll on short windows. Keep the
+     scrolling, hide the native bar — the fade edge below is the affordance. */
+  .menu-col,#caseScreen{
+    scrollbar-width:none;        /* Firefox */
+    -ms-overflow-style:none;     /* old Edge */
+  }
+  .menu-col::-webkit-scrollbar,
+  #caseScreen::-webkit-scrollbar{
+    width:0;height:0;display:none;   /* Chrome, Safari */
+  }
+
+  /* Soft fade at the bottom of the menu, only when there's more to reach */
+  .menu-col.can-scroll{
+    -webkit-mask-image:linear-gradient(to bottom,#000 calc(100% - 40px),transparent 100%);
+    mask-image:linear-gradient(to bottom,#000 calc(100% - 40px),transparent 100%);
+  }
+  .menu-col.can-scroll.at-end{
+    -webkit-mask-image:none;
+    mask-image:none;
   }
 </style>
 <body>
@@ -1608,6 +1637,20 @@ function tick(){
   clock.innerHTML=`${h}<span class="colon">:</span>${m}`;
 }
 tick();setInterval(tick,30000);
+
+/* ---------- scroll affordance ----------
+   Only fade the menu's bottom edge when it actually overflows, and drop the
+   fade once you've reached the end so nothing is ever dimmed unnecessarily. */
+const menuCol=document.querySelector('.menu-col');
+function updateMenuFade(){
+  const overflowing=menuCol.scrollHeight>menuCol.clientHeight+1;
+  menuCol.classList.toggle('can-scroll',overflowing);
+  const atEnd=menuCol.scrollTop+menuCol.clientHeight>=menuCol.scrollHeight-2;
+  menuCol.classList.toggle('at-end',atEnd);
+}
+menuCol.addEventListener('scroll',updateMenuFade,{passive:true});
+addEventListener('resize',updateMenuFade,{passive:true});
+updateMenuFade();
 
 /* ---------------- boot ----------------
    Deep links land straight on the case study and skip the entry
