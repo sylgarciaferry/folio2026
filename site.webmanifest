@@ -1,0 +1,13 @@
+{
+  "name": "Sylvain Garcia",
+  "short_name": "Syl Garcia",
+  "description": "Product designer and design lead in Sydney.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#101014",
+  "theme_color": "#101014",
+  "icons": [
+    { "src": "/images/icon-192.jpg", "sizes": "192x192", "type": "image/jpeg" },
+    { "src": "/images/icon-512.jpg", "sizes": "512x512", "type": "image/jpeg" }
+  ]
+}
