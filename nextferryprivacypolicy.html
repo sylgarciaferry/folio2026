@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Next Ferry Privacy Policy — Sylvain Garcia</title>
-<meta name="description" content="Privacy policy for Next Ferry, the zero interaction Sydney ferry timetable app for iOS by Sylvain Garcia. Your location stays on your device.">
+<meta name="description" content="Privacy policy for Next Ferry, the zero interaction Sydney ferry timetable app for iOS by Sylvain Garcia. Your location stays on your device and no analytics are used.">
 <link rel="canonical" href="https://sylgarcia.com/nextferryprivacypolicy">
 <meta name="robots" content="index,follow">
 <meta name="author" content="Sylvain Garcia">
@@ -78,7 +78,7 @@
 </header>
 
 <main>
-  <span class="mono updated">Next Ferry · Last updated 3 November 2026</span>
+  <span class="mono updated">Next Ferry · Last updated 10 November 2026</span>
   <h1>Privacy Policy</h1>
   <p class="lede">Next Ferry uses your location to find your nearest wharf, and that location never leaves your device. I don't collect, store or share any personal information.</p>
 
@@ -89,23 +89,33 @@
 
   <section>
     <h2>Location</h2>
-    <p>Next Ferry asks for permission to use your device's location while the app is open. It uses your location for one purpose: working out which wharf you're closest to so it can show your next departure without you tapping anything.</p>
+    <p>Next Ferry asks for permission to use your device's location while you are using the app, its Apple Watch app or its widgets. It uses your location for one purpose: working out which wharf you're closest to so it can show your next departure without you tapping anything.</p>
     <ul>
       <li>Your location is processed on your device only.</li>
-      <li>It is not sent to me, stored on any server, or shared with anyone.</li>
-      <li>The app does not track your location in the background.</li>
+      <li>It is not sent to me, to Transport for NSW, or to anyone else. Only the name of the wharf (Manly or Circular Quay) is used to ask for departures.</li>
+      <li>The app does not track your location in the background and does not build a history of where you have been.</li>
     </ul>
     <p>You can turn location access off at any time in <strong>Settings › Privacy &amp; Security › Location Services › Next Ferry</strong>. Without it, the app can't pick your nearest wharf automatically.</p>
   </section>
 
   <section>
+    <h2>Live departure data</h2>
+    <p>To show real-time departures and delays, Next Ferry asks a small service that I run on Cloudflare for the ferry times at one wharf. That service gets the times from the <a href="https://opendata.transport.nsw.gov.au/" rel="noopener">Transport for NSW Open Data</a> API and passes them back to the app.</p>
+    <ul>
+      <li>The request says only which wharf you want times for. It contains no location, name, account or device identifier.</li>
+      <li>As with any internet request, the service and Cloudflare can technically see your IP address and basic technical details such as the time of the request. I do not use these to identify you, and I do not link them to you or keep them for any purpose beyond running and fixing the service. Cloudflare may keep standard operational logs under its own <a href="https://www.cloudflare.com/privacypolicy/" rel="noopener">privacy policy</a>.</li>
+      <li>Transport for NSW receives requests from my service, not from your device, so it does not see your IP address.</li>
+    </ul>
+  </section>
+
+  <section>
     <h2>Everything else</h2>
-    <p>Next Ferry has no accounts, no sign-in, no advertising and no analytics or tracking tools. It does not access your contacts, photos, camera, microphone or any other personal data on your device. I don't collect personal information of any kind.</p>
+    <p>Next Ferry has no accounts, no sign-in, no advertising and no analytics, crash-reporting or tracking tools. It does not access your contacts, photos, camera, microphone or any other personal data on your device. I don't collect personal information of any kind.</p>
   </section>
 
   <section>
     <h2>Third parties</h2>
-    <p>Next Ferry contains no third-party advertising, analytics or tracking code, and I do not sell, rent or share data with anyone.</p>
+    <p>Next Ferry contains no third-party advertising, analytics, crash-reporting or tracking code, and I do not sell, rent or share data with anyone. The only outside services involved are Cloudflare, which runs the service described above, and Transport for NSW, which supplies the ferry data.</p>
     <p>Apple processes the data it needs to deliver the App Store, such as your purchase and download records, under its own <a href="https://www.apple.com/legal/privacy/" rel="noopener">privacy policy</a>. If you use iCloud device backups, Apple may back up the app's on-device data as part of your backup, which is governed by your Apple settings and Apple's policies.</p>
   </section>
 
