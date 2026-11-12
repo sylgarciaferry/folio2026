@@ -461,6 +461,12 @@
     background:var(--ink);transform:scaleX(0);transform-origin:left;
     transition:transform .3s cubic-bezier(.2,.7,.2,1),background .2s ease;
   }
+  .case-store{
+    display:table;margin-top:20px;font-family:'IBM Plex Mono',monospace;font-size:13px;
+    letter-spacing:.04em;text-transform:uppercase;color:var(--ink);
+    border-bottom:1px solid currentColor;padding-bottom:3px;transition:color .2s ease;
+  }
+  .case-store:hover{color:var(--reef)}
   .case-talk:hover{color:var(--reef)}
   .case-talk:hover::after{transform:scaleX(1);background:var(--reef)}
 
@@ -741,6 +747,7 @@
       <section class="case-section">
         <h3>Outcome</h3>
         <p>Dough Calc is on the App Store, and the real result isn't the app. It's proof that a product designer can now own the whole line, design to build to ship, without waiting in the queue for engineering.</p>
+        <a class="case-store" href="https://apps.apple.com/us/app/dough-calc/id6751540615" target="_blank" rel="noopener">Download Dough Calc on the App Store ↗</a>
       </section>
       <div class="stats">
         <div class="stat"><strong data-final="Live">Live</strong><span class="mono">On the App Store</span></div>
@@ -822,6 +829,7 @@
       <section class="case-section">
         <h3>Outcome</h3>
         <p>Open Next Ferry and your next departure is already there, now with live delays and cancellations. Same screen, same zero taps, in far more places.</p>
+        <a class="case-store" href="https://apps.apple.com/us/app/next-ferry-manly-circular-quay/id1185486495" target="_blank" rel="noopener">Download Next Ferry on the App Store ↗</a>
       </section>
       <div class="stats">
         <div class="stat"><strong data-final="0">0</strong><span class="mono">Taps to see your next ferry</span></div>
